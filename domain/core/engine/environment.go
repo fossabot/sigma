@@ -1,4 +1,4 @@
-package core
+package engine
 
 // Environment directly fetch os envs with getting help from env
 type Environment struct {
@@ -45,14 +45,14 @@ type Database struct {
 
 // Data is used inside the Database struct
 type Data struct {
-	// DSN  string `env:"SIGMA_DATABASE_DATA_URL,required" json:"dsn"`
-	// Type string `env:"SIGMA_DATABASE_DATA_TYPE,required" json:"type"`
+	DSN  string `env:"SIGMA_DATABASE_DATA_URL,required" json:"dsn"`
+	Type string `env:"SIGMA_DATABASE_DATA_TYPE,required" json:"type"`
 }
 
 // Activity is used inside the Database struct
 type Activity struct {
-	// DSN  string `env:"SIGMA_DATABASE_ACTIVITY_URL,required" json:"dsn"`
-	// Type string `env:"SIGMA_DATABASE_ACTIVITY_TYPE,required" json:"type"`
+	DSN  string `env:"SIGMA_DATABASE_ACTIVITY_URL,required" json:"dsn"`
+	Type string `env:"SIGMA_DATABASE_ACTIVITY_TYPE,required" json:"type"`
 }
 
 // Log configuration terms hold here
