@@ -1,10 +1,15 @@
 package managing
 
-import "fmt"
+import (
+	"fmt"
+	"sigma/domain/core/engine"
+	"sigma/domain/managing/model"
+)
 
-// import "sigma/domain/managing/model"
+// import
 
-func Migrate() {
+// Migrate is called for creating tables, indexes and etc
+func Migrate(e *engine.Engine) {
+	e.DB.AutoMigrate(&model.Role{})
 
-	fmt.Println("************************************ this is migrate")
 }

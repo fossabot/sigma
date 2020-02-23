@@ -2,6 +2,7 @@ package main
 
 import (
 	"sigma/cmd/cloud/server"
+	"sigma/cmd/cloud/setup"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
@@ -10,6 +11,10 @@ import (
 
 func main() {
 
-	server.Initialize()
+	engine := setup.LoadEnv()
+	setup.InitDB(engine)
+	setup.Migrate(engine)
+
+	server.Initialize(engine)
 
 }
