@@ -3,13 +3,13 @@ package server
 import (
 	"fmt"
 	"log"
-	"sigma/domain/core/engine"
+	"sigma/domain/core"
 
 	"github.com/gin-gonic/gin"
 )
 
 // Initialize initiate the server
-func Initialize(engine *engine.Engine) *gin.Engine {
+func Initialize(engine *core.Engine) *gin.Engine {
 
 	r := gin.Default()
 
